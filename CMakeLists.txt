@@ -11,6 +11,8 @@ if (NOT SoapySDR_FOUND)
     message(FATAL_ERROR "Soapy SDR development files not found...")
 endif ()
 
+add_library( spectranstream SHARED IMPORTED)
+set_property(TARGET spectranstream PROPERTY IMPORTED_LOCATION "${SPECTRANSTREAM_LIBRARY}")
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 
