@@ -182,9 +182,9 @@ private:
         spectran_stream *dev;
         double m_sample_rate = 1e6;
         double m_fc = 500e6;
-        double m_fc_offset = -5e6;
+        double m_fc_offset = -0e6;
         spectran_stream::STREAMER_TYPE m_streamer_type;
-        std::string m_endpoint = "192.168.178.51:54664";
+        std::string m_endpoint = "127.0.0.1:54664";
 
         bool m_streaming_started = false;
 
