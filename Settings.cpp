@@ -251,6 +251,11 @@ std::vector<double> SoapySpectranV6::listSampleRates(const int direction, const 
 {
     std::vector<double> results;
 
+    results.push_back(0.05e6);
+    results.push_back(0.1e6);
+    results.push_back(0.2e6);
+    results.push_back(0.5e6);
+    results.push_back(0.8e6);
     results.push_back(1e6);
     results.push_back(2e6);
     results.push_back(2.048e6);
