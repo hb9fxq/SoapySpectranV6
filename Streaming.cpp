@@ -63,6 +63,26 @@ SoapySDR::ArgInfoList SoapySpectranV6::getStreamArgsInfo(const int direction, co
     fcOffsetArg.type = SoapySDR::ArgInfo::FLOAT;
     streamArgs.push_back(fcOffsetArg);
 
+    SoapySDR::ArgInfo demodBlockArg;
+    demodBlockArg.key = "demodblock";
+    demodBlockArg.value = "Block_IQDemodulator_1";
+    demodBlockArg.name = "DEMODBLOCK";
+    demodBlockArg.description = "DEMODBLOCK API NAME";
+    demodBlockArg.units = "rtsastring";
+    demodBlockArg.type = SoapySDR::ArgInfo::STRING;
+    streamArgs.push_back(demodBlockArg);
+
+    SoapySDR::ArgInfo spectranBlockArg;
+    spectranBlockArg.key = "spectranblock";
+    spectranBlockArg.value = "Block_Spectran_V6B_1";
+    spectranBlockArg.name = "SPECTRANBLOCK";
+    spectranBlockArg.description = "SPECTRANBLOCK API NAME";
+    spectranBlockArg.units = "rtsastring";
+    spectranBlockArg.type = SoapySDR::ArgInfo::STRING;
+    streamArgs.push_back(spectranBlockArg);
+
+
+
 
     return streamArgs;
 }
@@ -161,6 +181,6 @@ int SoapySpectranV6::readStream(
 
 void SoapySpectranV6::updateDemod(){
     if(m_streaming_started){
-    dev->UpdateDemodulator(m_fc, m_fc_offset, m_sample_rate);
+    dev->UpdateDemodulator(m_demodblock, m_spectranbloc ,m_fc, m_fc_offset, m_sample_rate);
     }
 }

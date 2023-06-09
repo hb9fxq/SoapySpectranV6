@@ -6,13 +6,16 @@ cmake_minimum_required(VERSION 2.8.7)
 
 project(SoapySpectranV6 CXX)
 
-find_package(SoapySDR "0.4.0" NO_MODULE REQUIRED)
+find_package(SoapySDR "0.8.0" NO_MODULE REQUIRED)
 if (NOT SoapySDR_FOUND)
     message(FATAL_ERROR "Soapy SDR development files not found...")
 endif ()
 
-add_library( spectranstream SHARED IMPORTED)
-set_property(TARGET spectranstream PROPERTY IMPORTED_LOCATION "${SPECTRANSTREAM_LIBRARY}")
+#find_package(spectranstream REQUIRED)
+
+#add_library( spectranstream SHARED IMPORTED)
+
+#set_property(TARGET spectranstream PROPERTY IMPORTED_LOCATION "${SPECTRANSTREAM_LIBRARY}")
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 

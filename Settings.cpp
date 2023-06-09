@@ -36,6 +36,17 @@ SoapySpectranV6::SoapySpectranV6(const SoapySDR::Kwargs &args)
     {
         m_fc_offset = std::stod(args.at("fcoffset"));
     }
+
+    if (args.count("demodblock") == 1)
+    {
+        m_demodblock = args.at("demodblock").c_str();
+    }
+
+      if (args.count("spectranblock") == 1)
+    {
+        m_spectranbloc = args.at("spectranblock").c_str();
+    }
+
 }
 
 SoapySpectranV6::~SoapySpectranV6(void)
@@ -255,6 +266,10 @@ std::vector<double> SoapySpectranV6::listSampleRates(const int direction, const 
     results.push_back(12e6);
     results.push_back(13e6);
     results.push_back(14e6);
+    results.push_back(15e6);
+    results.push_back(20e6);
+    results.push_back(30e6);
+    results.push_back(40e6);
     results.push_back(92.16e6);
     results.push_back(122.88e6);
     results.push_back(184.32e6);

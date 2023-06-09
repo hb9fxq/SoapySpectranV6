@@ -184,7 +184,10 @@ private:
         double m_fc = 500e6;
         double m_fc_offset = -0e6;
         spectran_stream::STREAMER_TYPE m_streamer_type;
-        std::string m_endpoint = "127.0.0.1:54664";
+        std::string m_endpoint = "127.0.0.1:54665";
+
+        std::string m_demodblock = "Block_IQDemodulator_1";
+        std::string m_spectranbloc = "Block_Spectran_V6B_1";
 
         bool m_streaming_started = false;
 
